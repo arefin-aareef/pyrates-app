@@ -27,8 +27,8 @@ function App() {
           <PostPage />
         </Route>
 
-        <Route path="/" element={<About />} />
-        <Route path="/" element={<Missing />} />
+        <Route path="/about" component={About} />
+        <Route path="*" component={Missing} />
         
       </Switch>
       
