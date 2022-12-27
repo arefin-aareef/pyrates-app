@@ -4,6 +4,8 @@ import Footer from './Footer';
 import Home from './Home';
 import NewPost from './NewPost';
 import Missing from './Missing';
+import { Route, Switch, useHistory } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 function App() {
   return (
