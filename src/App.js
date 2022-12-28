@@ -15,11 +15,11 @@ function App() {
       <Header />
       <Nav />
       <Switch>
-        <Route path='/'>
+        <Route exact path='/'>
           <Home />
         </Route>
 
-        <Route path='/post'>
+        <Route exact path='/post'>
           <NewPost />
         </Route>
 
