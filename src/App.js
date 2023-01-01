@@ -6,7 +6,7 @@ import NewPost from './NewPost';
 import Missing from './Missing';
 import PostPage from './PostPage';
 import About from './About';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Switch, Route, useHistory } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function App() {
