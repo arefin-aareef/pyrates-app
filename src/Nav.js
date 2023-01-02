@@ -16,14 +16,14 @@ const Nav = ({ search, setSearch }) => {
         </form>
         <ul>
           
-          <li><a onClick={() => {window.location.href="/"}}>Home</a></li>
+          {/* <li><a onClick={() => {window.location.href="/"}}>Home</a></li>
           <li><a onClick={() => {window.location.href="/post"}}>Post</a></li>
-          <li><a onClick={() => {window.location.href="/about"}}>About</a></li>
+          <li><a onClick={() => {window.location.href="/about"}}>About</a></li> */}
 
           
-          {/* <li><Link to="/">Home</Link></li>
+          <li><Link to="/">Home</Link></li>
           <li><Link to="/post">Post</Link></li>
-          <li><Link to="/about">About</Link></li> */}
+          <li><Link to="/about">About</Link></li>
         </ul>
     </nav>
   )}
