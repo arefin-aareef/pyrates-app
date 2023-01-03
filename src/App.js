@@ -1,11 +1,12 @@
 import Layout from './Layout';
 import Home from './Home';
 import NewPost from './NewPost';
-import Missing from './Missing';
 import PostPage from './PostPage';
 import About from './About';
+import Missing from './Missing';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { format } from 'date-fns';
 
 function App() {
   const [posts, setPosts] = useState([
@@ -40,12 +41,20 @@ function App() {
   const [postBody, setPostBody] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const id = posts.length ? posts[posts.length - 1].id + 1 : 1;
+    const datetime = format(new Date(), 'MMMM dd, yyyy pp');
+    const newPost = { id, title: postTitle, datetime, body: postBody };
+    const allPosts = [...posts, newPost];
+    setPosts(allPosts);
+    setPostTitle('');
+    setPostBody('');
+    navigate('/');
   }
 
   const handleDelete = (id) => {
-    const postsList = posts.filter(post => post.id !== id); //filtering out the post that has the id we have pass in
+    const postsList = posts.filter(post => post.id !== id);
     setPosts(postsList);
     navigate('/');
   }
