@@ -1,12 +1,10 @@
-import Header from './Header';
-import Nav from './Nav';
-import Footer from './Footer';
+import Layout from './Layout';
 import Home from './Home';
 import NewPost from './NewPost';
 import Missing from './Missing';
 import PostPage from './PostPage';
 import About from './About';
-import { Switch, Route, useHistory } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -39,38 +37,35 @@ function App() {
   const [search, setSearch] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
-  const history = useHistory();
+  const navigate = useNavigate();
   const handleDelete = (id) => {
     const postsList = posts.filter(post => post.id !== id); //filtering out the post that has the id we have pass in
     setPosts(postsList);
-    history.push('/');
+    navigate('/');
   }
 
   return (
-    <div className="App">
-      <Header title="React JS Blog" />
-      <Nav search={search} setSearch={setSearch} />
-      <Switch>
-        <Route exact path="/">
-          <Home posts={posts} />
+    
+    <Routes>
+      <Route path="/" element={<Layout 
+        search={search}
+        setSearch={setSearch}
+      />}>
+        <Route index element={<Home posts={searchResults} />} />
+        <Route path='post'>
+          <Route index element={<NewPost
+            
+          />} />
+          <Route path="/post/:id" element={<PostPage 
+            posts={posts} 
+            handleDelete={handleDelete} 
+          />} />
         </Route>
-
-        <Route exact path="/post">
-          <NewPost />
-        </Route>
-
-        <Route path="/post/:id">
-          <PostPage posts={posts} handleDelete={handleDelete} />
-        </Route>
-
-        <Route path="/about" component={About} />
-        <Route path="*" component={Missing} />
-        
-      </Switch>
+        <Route path="about" element={<About />} />
+        <Route path="*" element={<Missing />} />
+      </Route>
+    </Routes>
       
-      <Footer />
-
-    </div>
   );
 }
 
