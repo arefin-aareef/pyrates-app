@@ -36,8 +36,14 @@ function App() {
   ])
   const [search, setSearch] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-
+  const [postTitle, setPostTitle] = useState('');
+  const [postBody, setPostBody] = useState('');
   const navigate = useNavigate();
+
+  const handleSubmit = () => {
+
+  }
+
   const handleDelete = (id) => {
     const postsList = posts.filter(post => post.id !== id); //filtering out the post that has the id we have pass in
     setPosts(postsList);
@@ -54,7 +60,11 @@ function App() {
         <Route index element={<Home posts={searchResults} />} />
         <Route path='post'>
           <Route index element={<NewPost
-            
+            handleSubmit={handleSubmit}
+            postTitle={postTitle}
+            setPostTitle={setPostTitle}
+            postBody={postBody}
+            setPostBody={setPostBody}
           />} />
           <Route path="/post/:id" element={<PostPage 
             posts={posts} 
