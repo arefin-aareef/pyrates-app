@@ -16,7 +16,7 @@ const EditPost = ({
     }, [post, setEditTitle, setEditBody])
     return (
         <main className='NewPost'>
-            {ediTitle &&
+            {editTitle &&
                 <>
                     <h2>Edit Post</h2>
                     <form className='newPostForm' onSubmit={(e) => e.preventDefault()}>
@@ -37,6 +37,15 @@ const EditPost = ({
                         />
                         <button type='submit' onClick={() => handleEdit(post.id)}>Submit</button>
                     </form>
+                </>
+            }
+            {!editTitle && // if post page not exists
+                <>
+                    <h2>Post Not Found</h2>
+                    <p>Well, that's disappointing</p>
+                    <p>
+                        <Link to='/'>Visit Our Houmepage</Link>
+                    </p>
                 </>
             }
         </main>
