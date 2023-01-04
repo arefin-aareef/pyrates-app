@@ -7,6 +7,7 @@ import Missing from './Missing';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
+import api from './api/posts';
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -15,6 +16,25 @@ function App() {
   const [postTitle, setPostTitle] = useState('');
   const [postBody, setPostBody] = useState('');
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await api.get('/posts');
+        setPosts(response.data);
+      } catch (err) {
+        if (err.response) {
+          // Not in the 200 response range
+          console.log(err.respons.data);
+          console.log(err.respons.status);
+          console.log(err.respons.headers);
+        } else {
+          console.log(`Error: ${err.message}`);
+        }
+      }
+    }
+    fetchPosts();
+  }, []) // we only want this to happen at load time so our dependencies will be empty
 
   useEffect(() => {
     const filteredResults = posts.filter((post) =>
