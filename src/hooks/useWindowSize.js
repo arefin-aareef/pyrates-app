@@ -19,12 +19,7 @@ const useWindowSize = () => {
         // Get values to continue to adjust window size
         window.addEventListener("resize", handleResize);
         // Clean up to prevent memory leak
-        const cleanUp = () => {
-            console.log('runs if useEffect dependencies changes')
-            window.removeEventListener("resize", handleResize);
-        }
-
-        return cleanUp;
+        return () => window.removeEventListener("resize", handleResize);
 
     }, [])
 
