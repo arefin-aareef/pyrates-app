@@ -1,12 +1,6 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "My First Post",
-      "datetime": "January 05, 2023 1:33:34 AM",
-      "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis consequatur expedita, assumenda similique non optio! Modi nesciunt excepturi corrupti atque blanditiis quo nobis, non optio quae possimus illum exercitationem ipsa!"
-    },
-    {
       "id": 2,
       "title": "My 2nd Post",
       "datetime": "July 01, 2021 11:17:36 AM",
@@ -20,9 +14,9 @@
     },
     {
       "id": 5,
-      "title": "New Post Edit",
-      "datetime": "January 05, 2023 1:34:25 AM",
-      "body": "Test. Edited"
+      "title": "fgdhgdfg",
+      "datetime": "January 18, 2023 12:34:17 AM",
+      "body": "dfghdfhdfgdf"
     }
   ]
 }
