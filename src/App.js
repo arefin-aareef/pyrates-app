@@ -13,7 +13,7 @@ function App() {
     <DataProvider>
       <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
+            <Route path='/' index element={<Home />} />
             <Route path='post'>
               <Route index element={<NewPost />} />
               <Route path="/post/:id" element={<PostPage />} />

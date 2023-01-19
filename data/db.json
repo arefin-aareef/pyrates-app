@@ -3,20 +3,14 @@
     {
       "id": 1,
       "title": "Post 1",
-      "datetime": "January 19, 2023 7:14:59 PM",
-      "body": "Hi. This is post 1"
+      "datetime": "January 19, 2023 9:39:31 PM",
+      "body": "hhhhh"
     },
     {
       "id": 2,
-      "title": "Post 2",
-      "datetime": "January 19, 2023 7:15:16 PM",
-      "body": "Hello This is post 2"
-    },
-    {
-      "id": 3,
-      "title": "Post 3",
-      "datetime": "January 19, 2023 7:15:55 PM",
-      "body": "My name is Arefin Aareef. I'm learning react."
+      "title": "New Post",
+      "datetime": "January 19, 2023 9:39:44 PM",
+      "body": "jjjjjjj"
     }
   ]
 }
