@@ -8,7 +8,7 @@ import { Outlet } from 'react-router-dom';
 const Layout = () => {
   return (
     <div className="App">
-      <Header title="React JS Blog"/>
+      <Header title="Pyrates Blog"/>
       <Nav />
       <Outlet />
       <Footer />
