@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/pyrates-app/static/css/main.1c486a09.css",
-    "main.js": "/pyrates-app/static/js/main.683a0f9d.js",
+    "main.js": "/pyrates-app/static/js/main.fd8f7583.js",
     "index.html": "/pyrates-app/index.html",
     "main.1c486a09.css.map": "/pyrates-app/static/css/main.1c486a09.css.map",
-    "main.683a0f9d.js.map": "/pyrates-app/static/js/main.683a0f9d.js.map"
+    "main.fd8f7583.js.map": "/pyrates-app/static/js/main.fd8f7583.js.map"
   },
   "entrypoints": [
     "static/css/main.1c486a09.css",
-    "static/js/main.683a0f9d.js"
+    "static/js/main.fd8f7583.js"
   ]
 }
